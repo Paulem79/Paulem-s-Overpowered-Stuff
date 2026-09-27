@@ -5,13 +5,8 @@ import net.minecraft.resources.ResourceKey;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.equipment.ArmorMaterial;
-import net.minecraft.world.item.equipment.ArmorType;
-import net.minecraft.world.item.equipment.EquipmentAsset;
-import net.minecraft.world.item.equipment.EquipmentAssets;
+import net.minecraft.world.item.equipment.*;
 import net.paulem.pos.POS;
-
-import java.util.Map;
 
 public interface EchoStabilizedAmethystArmorMaterial {
     int BASE_DURABILITY = 49;
@@ -20,16 +15,11 @@ public interface EchoStabilizedAmethystArmorMaterial {
 
     ArmorMaterial INSTANCE = new ArmorMaterial(
             BASE_DURABILITY,
-            Map.of(
-                    ArmorType.HELMET, 3,
-                    ArmorType.CHESTPLATE, 8,
-                    ArmorType.LEGGINGS, 6,
-                    ArmorType.BOOTS, 3
-            ),
-            5,
+            ArmorMaterials.makeDefense(4, 7, 9, 4, 25),
+            25,
             SoundEvents.ARMOR_EQUIP_IRON,
-            0.0F,
-            0.0F,
+            5.0F,
+            0.3F,
             REPAIRS_ECHO_STABILIZED_AMETHYST_ARMOR,
             ECHO_STABILIZED_AMETHYST_ARMOR_MATERIAL_KEY
     );
