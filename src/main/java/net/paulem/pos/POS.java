@@ -19,6 +19,7 @@ public class POS implements ModInitializer {
 		LOGGER.info("Hey, reminds me of something, should I call Brandon's Core?");
 
 		POSItems.init();
+		POSCreativeTab.init();
 	}
 
 	public static Identifier id(String path) {

@@ -9,7 +9,7 @@ import net.paulem.pos.POS;
 import net.paulem.pos.items.armors.EchoStabilizedAmethystArmorMaterial;
 import net.paulem.pos.items.armors.POSArmorItem;
 
-import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.function.Function;
 
@@ -18,7 +18,7 @@ public class POSItems {
         /* This utility class should not be instantiated */
     }
 
-    public static final Map<ResourceKey<Item>, Item> ITEMS = new HashMap<>();
+    public static final Map<ResourceKey<Item>, Item> ITEMS = new LinkedHashMap<>();
 
     public static final Item ECHO_STABILIZED_AMETHYST = register(POSItemsIds.ECHO_STABILIZED_AMETHYST, Item::new, new Item.Properties());
 

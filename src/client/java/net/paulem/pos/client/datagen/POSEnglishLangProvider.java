@@ -3,6 +3,7 @@ package net.paulem.pos.client.datagen;
 import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider;
 import net.minecraft.core.HolderLookup;
+import net.paulem.pos.POSCreativeTab;
 import net.paulem.pos.items.POSItems;
 
 import java.util.concurrent.CompletableFuture;
@@ -15,5 +16,6 @@ public class POSEnglishLangProvider extends FabricLanguageProvider {
     @Override
     public void generateTranslations(HolderLookup.Provider holderLookup, TranslationBuilder translationBuilder) {
         translationBuilder.add(POSItems.ECHO_STABILIZED_AMETHYST, "Echo Stabilized Amethyst");
+        translationBuilder.addCreativeModeTab(POSCreativeTab.CUSTOM_CREATIVE_TAB_KEY, "Paulem's Overpowered Armors");
     }
 }
