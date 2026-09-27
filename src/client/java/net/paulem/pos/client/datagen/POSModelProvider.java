@@ -5,7 +5,7 @@ import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
 import net.minecraft.client.data.models.BlockModelGenerators;
 import net.minecraft.client.data.models.ItemModelGenerators;
 import net.minecraft.client.data.models.model.ModelTemplates;
-import net.paulem.pos.items.POAItems;
+import net.paulem.pos.items.POSItems;
 import org.jspecify.annotations.NonNull;
 
 public class POSModelProvider extends FabricModelProvider {
@@ -20,7 +20,7 @@ public class POSModelProvider extends FabricModelProvider {
 
     @Override
     public void generateItemModels(ItemModelGenerators itemModelGenerator) {
-        itemModelGenerator.generateFlatItem(POAItems.ECHO_STABILIZED_AMETHYST, ModelTemplates.FLAT_ITEM);
+        itemModelGenerator.generateFlatItem(POSItems.ECHO_STABILIZED_AMETHYST, ModelTemplates.FLAT_ITEM);
     }
 
     @Override

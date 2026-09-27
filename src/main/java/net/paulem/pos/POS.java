@@ -4,7 +4,7 @@ import net.fabricmc.api.ModInitializer;
 
 import net.minecraft.resources.Identifier;
 
-import net.paulem.pos.items.POAItems;
+import net.paulem.pos.items.POSItems;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -18,7 +18,7 @@ public class POS implements ModInitializer {
 		LOGGER.info("Initializing reactors destruction...");
 		LOGGER.info("Hey, reminds me of something, should I call Brandon's Core?");
 
-		POAItems.init();
+		POSItems.init();
 	}
 
 	public static Identifier id(String path) {

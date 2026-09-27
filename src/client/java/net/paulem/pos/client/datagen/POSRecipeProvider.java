@@ -9,7 +9,7 @@ import net.minecraft.data.recipes.RecipeProvider;
 import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Recipe;
-import net.paulem.pos.items.POAItems;
+import net.paulem.pos.items.POSItems;
 import org.jspecify.annotations.NonNull;
 
 import java.util.concurrent.CompletableFuture;
@@ -24,7 +24,7 @@ public class POSRecipeProvider extends FabricRecipeProvider {
         return new RecipeProvider(recipes, advancements) {
             @Override
             public void buildRecipes() {
-                shaped(RecipeCategory.MISC, POAItems.ECHO_STABILIZED_AMETHYST)
+                shaped(RecipeCategory.MISC, POSItems.ECHO_STABILIZED_AMETHYST)
                         .pattern("eae")
                         .pattern("ada")
                         .pattern("eae")

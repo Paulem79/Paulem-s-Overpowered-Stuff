@@ -9,8 +9,8 @@ import net.paulem.pos.POS;
 
 import java.util.function.Function;
 
-public class POAItems {
-    private POAItems() {
+public class POSItems {
+    private POSItems() {
         /* This utility class should not be instantiated */
     }
 
