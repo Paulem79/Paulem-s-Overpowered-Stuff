@@ -6,7 +6,11 @@ import net.minecraft.client.data.models.BlockModelGenerators;
 import net.minecraft.client.data.models.ItemModelGenerators;
 import net.minecraft.client.data.models.model.ModelTemplates;
 import net.paulem.pos.items.POSItems;
+import net.paulem.pos.items.armors.POSArmorItem;
+import org.apache.commons.lang3.StringUtils;
 import org.jspecify.annotations.NonNull;
+
+import java.util.Map;
 
 public class POSModelProvider extends FabricModelProvider {
     public POSModelProvider(FabricPackOutput output) {
@@ -21,6 +25,17 @@ public class POSModelProvider extends FabricModelProvider {
     @Override
     public void generateItemModels(ItemModelGenerators itemModelGenerator) {
         itemModelGenerator.generateFlatItem(POSItems.ECHO_STABILIZED_AMETHYST, ModelTemplates.FLAT_ITEM);
+
+        POSItems.ITEMS.forEach((itemKey, item) -> {
+            if (item instanceof POSArmorItem) {
+                itemModelGenerator.generateTrimmableItem(
+                        item,
+                        ItemModelGenerators.prefixForSlotTrim(StringUtils.substringAfterLast(itemKey.identifier().getPath(), "_")),
+                        false,
+                        Map.of()
+                );
+            }
+        });
     }
 
     @Override

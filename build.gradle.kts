@@ -12,6 +12,8 @@ repositories {
 }
 
 loom {
+	accessWidenerPath = file("src/main/resources/pos.ct")
+
 	splitEnvironmentSourceSets()
 
 	mods {

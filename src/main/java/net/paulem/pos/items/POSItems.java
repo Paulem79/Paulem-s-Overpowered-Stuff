@@ -2,11 +2,15 @@ package net.paulem.pos.items;
 
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.equipment.ArmorType;
 import net.paulem.pos.POS;
+import net.paulem.pos.items.armors.EchoStabilizedAmethystArmorMaterial;
+import net.paulem.pos.items.armors.POSArmorItem;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.function.Function;
 
 public class POSItems {
@@ -14,27 +18,43 @@ public class POSItems {
         /* This utility class should not be instantiated */
     }
 
-    public static final Item ECHO_STABILIZED_AMETHYST = register("echo_stabilized_amethyst", Item::new, new Item.Properties());
+    public static final Map<ResourceKey<Item>, Item> ITEMS = new HashMap<>();
 
-    private static Item register(String itemName, Function<Item.Properties, Item> itemFactory, Item.Properties settings) {
-        ResourceKey<Item> itemKey = createId(itemName);
+    public static final Item ECHO_STABILIZED_AMETHYST = register(POSItemsIds.ECHO_STABILIZED_AMETHYST, Item::new, new Item.Properties());
 
-        return register(itemKey, itemFactory, settings);
-    }
+    public static final POSArmorItem ECHO_STABILIZED_AMETHYST_HELMET = register(
+            POSItemsIds.ECHO_STABILIZED_AMETHYST_HELMET,
+            POSArmorItem::new,
+            new Item.Properties().humanoidArmor(EchoStabilizedAmethystArmorMaterial.INSTANCE, ArmorType.HELMET)
+                    .durability(ArmorType.HELMET.getDurability(EchoStabilizedAmethystArmorMaterial.BASE_DURABILITY))
+    );
+    public static final POSArmorItem ECHO_STABILIZED_AMETHYST_CHESTPLATE = register(
+            POSItemsIds.ECHO_STABILIZED_AMETHYST_CHESTPLATE,
+            POSArmorItem::new,
+            new Item.Properties().humanoidArmor(EchoStabilizedAmethystArmorMaterial.INSTANCE, ArmorType.CHESTPLATE)
+                    .durability(ArmorType.CHESTPLATE.getDurability(EchoStabilizedAmethystArmorMaterial.BASE_DURABILITY))
+    );
 
-    private static Item register(ResourceKey<Item> itemKey, Function<Item.Properties, Item> itemFactory, Item.Properties settings) {
-        // Create the item instance.
-        Item item = itemFactory.apply(settings.setId(itemKey));
+    public static final POSArmorItem ECHO_STABILIZED_AMETHYST_LEGGINGS = register(
+            POSItemsIds.ECHO_STABILIZED_AMETHYST_LEGGINGS,
+            POSArmorItem::new,
+            new Item.Properties().humanoidArmor(EchoStabilizedAmethystArmorMaterial.INSTANCE, ArmorType.LEGGINGS)
+                    .durability(ArmorType.LEGGINGS.getDurability(EchoStabilizedAmethystArmorMaterial.BASE_DURABILITY))
+    );
 
-        // Register the item.
-        Registry.register(BuiltInRegistries.ITEM, itemKey, item);
+    public static final POSArmorItem ECHO_STABILIZED_AMETHYST_BOOTS = register(
+            POSItemsIds.ECHO_STABILIZED_AMETHYST_BOOTS,
+            POSArmorItem::new,
+            new Item.Properties().humanoidArmor(EchoStabilizedAmethystArmorMaterial.INSTANCE, ArmorType.BOOTS)
+                    .durability(ArmorType.BOOTS.getDurability(EchoStabilizedAmethystArmorMaterial.BASE_DURABILITY))
+    );
 
-        return item;
-    }
+    private static<T extends Item> T register(ResourceKey<Item> itemKey, Function<Item.Properties, T> itemFactory, Item.Properties settings) {
+        T item = itemFactory.apply(settings.setId(itemKey));
 
-    private static ResourceKey<Item> createId(String name) {
-        // Create the item key.
-        return ResourceKey.create(Registries.ITEM, POS.id(name));
+        ITEMS.put(itemKey, item);
+
+        return Registry.register(BuiltInRegistries.ITEM, itemKey, item);
     }
 
     public static void init() {

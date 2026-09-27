@@ -2,10 +2,7 @@ package net.paulem.pos.client;
 
 import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
-import net.paulem.pos.client.datagen.POSAdvancementProvider;
-import net.paulem.pos.client.datagen.POSEnglishLangProvider;
-import net.paulem.pos.client.datagen.POSModelProvider;
-import net.paulem.pos.client.datagen.POSRecipeProvider;
+import net.paulem.pos.client.datagen.*;
 
 public class POSDataGenerator implements DataGeneratorEntrypoint {
 	@Override
@@ -15,5 +12,7 @@ public class POSDataGenerator implements DataGeneratorEntrypoint {
 		pack.addProvider(POSEnglishLangProvider::new);
 		pack.addProvider(POSRecipeProvider::new);
 		pack.addProvider(POSAdvancementProvider::new);
+		pack.addProvider(POSItemTagProvider::new);
+		pack.addProvider((FabricDataGenerator.Pack.Factory<POSEquipmentAssetProvider>) POSEquipmentAssetProvider::new);
 	}
 }
