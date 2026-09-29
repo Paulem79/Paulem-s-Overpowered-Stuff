@@ -6,7 +6,7 @@ import net.minecraft.client.data.models.BlockModelGenerators;
 import net.minecraft.client.data.models.ItemModelGenerators;
 import net.minecraft.client.data.models.model.ModelTemplates;
 import net.paulem.pos.items.POSItems;
-import net.paulem.pos.items.armors.POSArmorItem;
+import net.paulem.pos.items.armors.POSEnergyArmorItem;
 import org.apache.commons.lang3.StringUtils;
 import org.jspecify.annotations.NonNull;
 
@@ -27,7 +27,7 @@ public class POSModelProvider extends FabricModelProvider {
         itemModelGenerator.generateFlatItem(POSItems.ECHO_STABILIZED_AMETHYST, ModelTemplates.FLAT_ITEM);
 
         POSItems.ITEMS.forEach((itemKey, item) -> {
-            if (item instanceof POSArmorItem) {
+            if (item instanceof POSEnergyArmorItem) {
                 itemModelGenerator.generateTrimmableItem(
                         item,
                         ItemModelGenerators.prefixForSlotTrim(StringUtils.substringAfterLast(itemKey.identifier().getPath(), "_")),

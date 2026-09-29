@@ -1,0 +1,6 @@
+{
+  "energy_attack": {
+    "subtitle": "sound.pos.energy_attack",
+    "sounds": ["pos:energy_attack"]
+  }
+}

@@ -7,7 +7,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.equipment.ArmorType;
 import net.paulem.pos.POS;
 import net.paulem.pos.items.armors.EchoStabilizedAmethystArmorMaterial;
-import net.paulem.pos.items.armors.POSArmorItem;
+import net.paulem.pos.items.armors.POSEnergyArmorItem;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -22,31 +22,27 @@ public class POSItems {
 
     public static final Item ECHO_STABILIZED_AMETHYST = register(POSItemsIds.ECHO_STABILIZED_AMETHYST, Item::new, new Item.Properties());
 
-    public static final POSArmorItem ECHO_STABILIZED_AMETHYST_HELMET = register(
+    public static final POSEnergyArmorItem ECHO_STABILIZED_AMETHYST_HELMET = register(
             POSItemsIds.ECHO_STABILIZED_AMETHYST_HELMET,
-            POSArmorItem::new,
+            POSEnergyArmorItem::new,
             new Item.Properties().humanoidArmor(EchoStabilizedAmethystArmorMaterial.INSTANCE, ArmorType.HELMET)
-                    .durability(ArmorType.HELMET.getDurability(EchoStabilizedAmethystArmorMaterial.BASE_DURABILITY))
     );
-    public static final POSArmorItem ECHO_STABILIZED_AMETHYST_CHESTPLATE = register(
+    public static final POSEnergyArmorItem ECHO_STABILIZED_AMETHYST_CHESTPLATE = register(
             POSItemsIds.ECHO_STABILIZED_AMETHYST_CHESTPLATE,
-            POSArmorItem::new,
+            POSEnergyArmorItem::new,
             new Item.Properties().humanoidArmor(EchoStabilizedAmethystArmorMaterial.INSTANCE, ArmorType.CHESTPLATE)
-                    .durability(ArmorType.CHESTPLATE.getDurability(EchoStabilizedAmethystArmorMaterial.BASE_DURABILITY))
     );
 
-    public static final POSArmorItem ECHO_STABILIZED_AMETHYST_LEGGINGS = register(
+    public static final POSEnergyArmorItem ECHO_STABILIZED_AMETHYST_LEGGINGS = register(
             POSItemsIds.ECHO_STABILIZED_AMETHYST_LEGGINGS,
-            POSArmorItem::new,
+            POSEnergyArmorItem::new,
             new Item.Properties().humanoidArmor(EchoStabilizedAmethystArmorMaterial.INSTANCE, ArmorType.LEGGINGS)
-                    .durability(ArmorType.LEGGINGS.getDurability(EchoStabilizedAmethystArmorMaterial.BASE_DURABILITY))
     );
 
-    public static final POSArmorItem ECHO_STABILIZED_AMETHYST_BOOTS = register(
+    public static final POSEnergyArmorItem ECHO_STABILIZED_AMETHYST_BOOTS = register(
             POSItemsIds.ECHO_STABILIZED_AMETHYST_BOOTS,
-            POSArmorItem::new,
+            POSEnergyArmorItem::new,
             new Item.Properties().humanoidArmor(EchoStabilizedAmethystArmorMaterial.INSTANCE, ArmorType.BOOTS)
-                    .durability(ArmorType.BOOTS.getDurability(EchoStabilizedAmethystArmorMaterial.BASE_DURABILITY))
     );
 
     private static<T extends Item> T register(ResourceKey<Item> itemKey, Function<Item.Properties, T> itemFactory, Item.Properties settings) {
