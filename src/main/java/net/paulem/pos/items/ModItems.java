@@ -7,41 +7,41 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.equipment.ArmorType;
 import net.paulem.pos.POS;
 import net.paulem.pos.items.armors.EchoStabilizedAmethystArmorMaterial;
-import net.paulem.pos.items.armors.POSEnergyArmorItem;
+import net.paulem.pos.items.armors.ModEnergyArmorItem;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.function.Function;
 
-public class POSItems {
-    private POSItems() {
+public class ModItems {
+    private ModItems() {
         /* This utility class should not be instantiated */
     }
 
     public static final Map<ResourceKey<Item>, Item> ITEMS = new LinkedHashMap<>();
 
-    public static final Item ECHO_STABILIZED_AMETHYST = register(POSItemsIds.ECHO_STABILIZED_AMETHYST, Item::new, new Item.Properties());
+    public static final Item ECHO_STABILIZED_AMETHYST = register(ModItemsIds.ECHO_STABILIZED_AMETHYST, Item::new, new Item.Properties());
 
-    public static final POSEnergyArmorItem ECHO_STABILIZED_AMETHYST_HELMET = register(
-            POSItemsIds.ECHO_STABILIZED_AMETHYST_HELMET,
-            POSEnergyArmorItem::new,
+    public static final ModEnergyArmorItem ECHO_STABILIZED_AMETHYST_HELMET = register(
+            ModItemsIds.ECHO_STABILIZED_AMETHYST_HELMET,
+            ModEnergyArmorItem::new,
             new Item.Properties().humanoidArmor(EchoStabilizedAmethystArmorMaterial.INSTANCE, ArmorType.HELMET)
     );
-    public static final POSEnergyArmorItem ECHO_STABILIZED_AMETHYST_CHESTPLATE = register(
-            POSItemsIds.ECHO_STABILIZED_AMETHYST_CHESTPLATE,
-            POSEnergyArmorItem::new,
+    public static final ModEnergyArmorItem ECHO_STABILIZED_AMETHYST_CHESTPLATE = register(
+            ModItemsIds.ECHO_STABILIZED_AMETHYST_CHESTPLATE,
+            ModEnergyArmorItem::new,
             new Item.Properties().humanoidArmor(EchoStabilizedAmethystArmorMaterial.INSTANCE, ArmorType.CHESTPLATE)
     );
 
-    public static final POSEnergyArmorItem ECHO_STABILIZED_AMETHYST_LEGGINGS = register(
-            POSItemsIds.ECHO_STABILIZED_AMETHYST_LEGGINGS,
-            POSEnergyArmorItem::new,
+    public static final ModEnergyArmorItem ECHO_STABILIZED_AMETHYST_LEGGINGS = register(
+            ModItemsIds.ECHO_STABILIZED_AMETHYST_LEGGINGS,
+            ModEnergyArmorItem::new,
             new Item.Properties().humanoidArmor(EchoStabilizedAmethystArmorMaterial.INSTANCE, ArmorType.LEGGINGS)
     );
 
-    public static final POSEnergyArmorItem ECHO_STABILIZED_AMETHYST_BOOTS = register(
-            POSItemsIds.ECHO_STABILIZED_AMETHYST_BOOTS,
-            POSEnergyArmorItem::new,
+    public static final ModEnergyArmorItem ECHO_STABILIZED_AMETHYST_BOOTS = register(
+            ModItemsIds.ECHO_STABILIZED_AMETHYST_BOOTS,
+            ModEnergyArmorItem::new,
             new Item.Properties().humanoidArmor(EchoStabilizedAmethystArmorMaterial.INSTANCE, ArmorType.BOOTS)
     );
 

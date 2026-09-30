@@ -9,9 +9,9 @@ import net.minecraft.sounds.SoundSource;
 import net.minecraft.tags.DamageTypeTags;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.ItemStack;
-import net.paulem.pos.items.POSItems;
-import net.paulem.pos.items.armors.POSEnergyArmorItem;
-import net.paulem.pos.sounds.POSSounds;
+import net.paulem.pos.items.ModItems;
+import net.paulem.pos.items.armors.ModEnergyArmorItem;
+import net.paulem.pos.sounds.ModSounds;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -34,10 +34,10 @@ public class POS implements ModInitializer {
 		LOGGER.info("Initializing reactors destruction...");
 		LOGGER.info("Hey, reminds me of something, should I call Brandon's Core?");
 
-		POSSounds.init();
+		ModSounds.init();
 
-		POSItems.init();
-		POSCreativeTab.init();
+		ModItems.init();
+		ModCreativeTab.init();
 
 		ServerLivingEntityEvents.ALLOW_DAMAGE.register((entity, source, amount) -> {
 			if (IS_ABSORBING.get()) {
@@ -51,7 +51,7 @@ public class POS implements ModInitializer {
 
 				for (EquipmentSlot slot : ARMOR_SLOTS) {
 					ItemStack stack = player.getItemBySlot(slot);
-					if (stack.getItem() instanceof POSEnergyArmorItem energyItem) {
+					if (stack.getItem() instanceof ModEnergyArmorItem energyItem) {
 						long currentEnergy = energyItem.getStoredEnergy(stack);
 						long needed = totalEnergyNeeded - energyAbsorbed;
 						if (needed <= 0) break;
@@ -75,7 +75,7 @@ public class POS implements ModInitializer {
 					if (remainingDamage <= 0) {
 						player.level().playSound(
 								null, player.getX(), player.getY(), player.getZ(),
-								POSSounds.ENERGY_ATTACK, SoundSource.PLAYERS, 1F, 1F
+								ModSounds.ENERGY_ATTACK, SoundSource.PLAYERS, 1F, 1F
 						);
 						return false; // Cancel the full attack
 					} else {
@@ -96,7 +96,7 @@ public class POS implements ModInitializer {
 			for (ServerPlayer player : server.getPlayerList().getPlayers()) {
 				for (EquipmentSlot slot : ARMOR_SLOTS) {
 					ItemStack stack = player.getItemBySlot(slot);
-					if (stack.getItem() instanceof POSEnergyArmorItem energyItem) {
+					if (stack.getItem() instanceof ModEnergyArmorItem energyItem) {
 						if (energyItem.updateAttributes(stack)) {
 							player.setItemSlot(slot, stack.copy());
 						}

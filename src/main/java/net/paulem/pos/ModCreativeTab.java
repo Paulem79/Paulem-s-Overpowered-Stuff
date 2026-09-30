@@ -7,17 +7,17 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
-import net.paulem.pos.items.POSItems;
+import net.paulem.pos.items.ModItems;
 
-public class POSCreativeTab {
+public class ModCreativeTab {
     public static final ResourceKey<CreativeModeTab> CUSTOM_CREATIVE_TAB_KEY = ResourceKey.create(
             BuiltInRegistries.CREATIVE_MODE_TAB.key(), POS.id("creative_tab")
     );
 
     public static final CreativeModeTab CUSTOM_CREATIVE_TAB = FabricCreativeModeTab.builder()
-            .icon(() -> new ItemStack(POSItems.ECHO_STABILIZED_AMETHYST))
+            .icon(() -> new ItemStack(ModItems.ECHO_STABILIZED_AMETHYST))
             .title(Component.translatable("creativeTab.pos"))
-            .displayItems((_, output) -> POSItems.ITEMS.forEach((_, item) -> output.accept(item)))
+            .displayItems((_, output) -> ModItems.ITEMS.forEach((_, item) -> output.accept(item)))
             .build();
 
     public static void init() {

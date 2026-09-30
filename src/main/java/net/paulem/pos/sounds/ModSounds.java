@@ -6,8 +6,8 @@ import net.minecraft.resources.Identifier;
 import net.minecraft.sounds.SoundEvent;
 import net.paulem.pos.POS;
 
-public class POSSounds {
-    private POSSounds() {
+public class ModSounds {
+    private ModSounds() {
         /* This utility class should not be instantiated */
     }
 

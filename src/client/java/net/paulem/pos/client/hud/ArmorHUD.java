@@ -10,7 +10,7 @@ import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.paulem.pos.POS;
-import net.paulem.pos.items.armors.POSEnergyArmorItem;
+import net.paulem.pos.items.armors.ModEnergyArmorItem;
 
 public class ArmorHUD {
 
@@ -29,7 +29,7 @@ public class ArmorHUD {
             ItemStack stack = player.getItemBySlot(equipmentSlot);
             Item item = stack.getItem();
 
-            if (item instanceof POSEnergyArmorItem armorItem) {
+            if (item instanceof ModEnergyArmorItem armorItem) {
                 totalEnergy += armorItem.getStoredEnergy(stack);
                 totalMaxEnergy += armorItem.getEnergyCapacity(stack);
                 hasEnergyArmor = true;

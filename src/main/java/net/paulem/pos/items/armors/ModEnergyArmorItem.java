@@ -14,8 +14,8 @@ import team.reborn.energy.api.base.SimpleEnergyItem;
 
 import java.util.function.Consumer;
 
-public class POSEnergyArmorItem extends Item implements SimpleEnergyItem {
-    public POSEnergyArmorItem(Properties properties) {
+public class ModEnergyArmorItem extends Item implements SimpleEnergyItem {
+    public ModEnergyArmorItem(Properties properties) {
         super(properties);
     }
 

@@ -5,8 +5,8 @@ import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.item.Item;
 import net.paulem.pos.POS;
 
-public class POSItemsIds {
-    private POSItemsIds() {
+public class ModItemsIds {
+    private ModItemsIds() {
         /* This utility class should not be instantiated */
     }
 

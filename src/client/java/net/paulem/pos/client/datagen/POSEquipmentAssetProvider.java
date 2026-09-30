@@ -9,7 +9,7 @@ import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.item.equipment.EquipmentAsset;
 import net.paulem.pos.POS;
-import net.paulem.pos.items.armors.POSEquipmentAssets;
+import net.paulem.pos.items.armors.ModEquipmentAssets;
 import org.jspecify.annotations.NonNull;
 
 import java.util.HashMap;
@@ -23,7 +23,7 @@ public class POSEquipmentAssetProvider extends EquipmentAssetProvider {
     }
 
     private static void bootstrap(final BiConsumer<ResourceKey<EquipmentAsset>, EquipmentClientInfo> consumer) {
-        consumer.accept(POSEquipmentAssets.ECHO_STABILIZED_AMETHYST, onlyHumanoid("echo_stabilized_amethyst").build());
+        consumer.accept(ModEquipmentAssets.ECHO_STABILIZED_AMETHYST, onlyHumanoid("echo_stabilized_amethyst").build());
     }
 
     @Override

@@ -5,7 +5,7 @@ import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagsProvider;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.tags.ItemTags;
 import net.paulem.pos.items.armors.EchoStabilizedAmethystArmorMaterial;
-import net.paulem.pos.items.POSItemsIds;
+import net.paulem.pos.items.ModItemsIds;
 import org.jspecify.annotations.NonNull;
 
 import java.util.concurrent.CompletableFuture;
@@ -18,15 +18,15 @@ public class POSItemTagProvider extends FabricTagsProvider.ItemTagsProvider {
     @Override
     protected void addTags(HolderLookup.@NonNull Provider registries) {
         builder(EchoStabilizedAmethystArmorMaterial.REPAIRS_ECHO_STABILIZED_AMETHYST_ARMOR)
-                .add(POSItemsIds.ECHO_STABILIZED_AMETHYST);
+                .add(ModItemsIds.ECHO_STABILIZED_AMETHYST);
 
         builder(ItemTags.HEAD_ARMOR)
-                .add(POSItemsIds.ECHO_STABILIZED_AMETHYST_HELMET);
+                .add(ModItemsIds.ECHO_STABILIZED_AMETHYST_HELMET);
         builder(ItemTags.CHEST_ARMOR)
-                .add(POSItemsIds.ECHO_STABILIZED_AMETHYST_CHESTPLATE);
+                .add(ModItemsIds.ECHO_STABILIZED_AMETHYST_CHESTPLATE);
         builder(ItemTags.LEG_ARMOR)
-                .add(POSItemsIds.ECHO_STABILIZED_AMETHYST_LEGGINGS);
+                .add(ModItemsIds.ECHO_STABILIZED_AMETHYST_LEGGINGS);
         builder(ItemTags.FOOT_ARMOR)
-                .add(POSItemsIds.ECHO_STABILIZED_AMETHYST_BOOTS);
+                .add(ModItemsIds.ECHO_STABILIZED_AMETHYST_BOOTS);
     }
 }

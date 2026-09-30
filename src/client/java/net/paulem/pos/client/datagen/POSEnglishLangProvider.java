@@ -6,8 +6,8 @@ import net.minecraft.core.HolderLookup;
 import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.item.Item;
-import net.paulem.pos.POSCreativeTab;
-import net.paulem.pos.items.POSItems;
+import net.paulem.pos.ModCreativeTab;
+import net.paulem.pos.items.ModItems;
 import org.apache.commons.lang3.text.WordUtils;
 
 import java.util.Map;
@@ -20,9 +20,9 @@ public class POSEnglishLangProvider extends FabricLanguageProvider {
 
     @Override
     public void generateTranslations(HolderLookup.Provider holderLookup, TranslationBuilder translationBuilder) {
-        translationBuilder.addCreativeModeTab(POSCreativeTab.CUSTOM_CREATIVE_TAB_KEY, "Paulem's Overpowered Armors");
+        translationBuilder.addCreativeModeTab(ModCreativeTab.CUSTOM_CREATIVE_TAB_KEY, "Paulem's Overpowered Armors");
 
-        for (Map.Entry<ResourceKey<Item>, Item> entry : POSItems.ITEMS.entrySet()) {
+        for (Map.Entry<ResourceKey<Item>, Item> entry : ModItems.ITEMS.entrySet()) {
             ResourceKey<Item> resourceKey = entry.getKey();
             Item item = entry.getValue();
 
